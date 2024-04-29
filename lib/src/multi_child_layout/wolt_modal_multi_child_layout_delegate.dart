@@ -1,3 +1,4 @@
+import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:wolt_modal_sheet/src/modal_type/wolt_modal_type.dart';
 
@@ -57,7 +58,7 @@ class WoltModalMultiChildLayoutDelegate extends MultiChildLayoutDelegate {
     final modalHeight = layoutChild(
       contentLayoutId,
       BoxConstraints(
-        minHeight: size.height * minPageHeight,
+        minHeight: math.max(size.height * minPageHeight, 0),
         maxHeight: size.height * maxPageHeight,
         maxWidth: modalWidth,
         minWidth: modalWidth,
