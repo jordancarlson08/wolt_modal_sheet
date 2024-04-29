@@ -147,16 +147,7 @@ class WoltModalSheetRoute<T> extends PageRoute<T> {
     const easeCurve = Curves.ease;
     switch (modalType) {
       case WoltModalType.bottomSheet:
-        return _bottomSheetTransitionAnimation ??
-            SlideTransition(
-              position: animation.drive(
-                Tween(
-                  begin: const Offset(0.0, 1.0),
-                  end: Offset.zero,
-                ).chain(CurveTween(curve: easeCurve)),
-              ),
-              child: child,
-            );
+        return child;
       case WoltModalType.dialog:
         return _dialogTransitionAnimation ??
             ScaleTransition(
