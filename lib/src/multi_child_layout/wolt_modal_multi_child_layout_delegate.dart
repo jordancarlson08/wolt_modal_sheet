@@ -46,6 +46,8 @@ class WoltModalMultiChildLayoutDelegate extends MultiChildLayoutDelegate {
 
   @override
   void performLayout(Size size) {
+    print('maxPageHeight: $maxPageHeight');
+    print('minPageHeight: $minPageHeight');
     final modalWidth = modalType.modalContentWidth(
       size.width,
       minDialogWidth: minDialogWidth,
@@ -58,8 +60,8 @@ class WoltModalMultiChildLayoutDelegate extends MultiChildLayoutDelegate {
     final modalHeight = layoutChild(
       contentLayoutId,
       BoxConstraints(
-        minHeight: math.max(size.height * minPageHeight, 0),
-        maxHeight: size.height * maxPageHeight,
+        minHeight: 100,
+        maxHeight: 200,
         maxWidth: modalWidth,
         minWidth: modalWidth,
       ),
